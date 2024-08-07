@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.RegisterContainer{
+    background-color: rgb(2, 21, 38);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.RegisterForm{
+    background-color: rgb(3, 52, 110);
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+}
+.RegisterInput{
+    background-color: rgb(226, 226, 182);
+    width: 80%;
+    height: 35px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+.RegisterSubmit{
+    background-color: rgb(2, 21, 38);
+    color: rgb(226, 226, 182);
+    width: 40%;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+.RegisterHeading{
+    color: rgb(2, 21, 38);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+.RegisterNav{
+    height: 60px;
+    background-color: rgb(3, 52, 110);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 10px;
+}
+.RegisterNav h1{
+    color: rgb(226, 226, 182);
+}
+.RegisterNavContainer{
+    width: 90%;
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+}
+.RegisterNavContainer a{
+    color: rgb(226, 226, 182);
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}

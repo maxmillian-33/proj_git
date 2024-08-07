@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.AdminNav{
+    height: 60px;
+    background-color: rgb(3, 52, 110);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 10px;
+}
+.AdminNav h1{
+    color: rgb(226, 226, 182);
+}
+.AdminContainer{
+    width: 80%;
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+}
+.AdminContainer a{
+    color: rgb(226, 226, 182);
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.AdminBodyContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
