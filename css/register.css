@@ -48,7 +48,7 @@
     height: 60px;
     background-color: rgb(3, 52, 110);
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     padding-left: 10px;
@@ -63,10 +63,11 @@
     justify-content: end;
     align-items: center;
     flex-direction: row;
+    padding-right: 10px;
 }
 .RegisterNavContainer a{
     color: rgb(226, 226, 182);
     margin-left: 15px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
 }
