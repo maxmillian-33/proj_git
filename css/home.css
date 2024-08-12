@@ -3,7 +3,7 @@
     padding: 0;
 }
 .HomeNav{
-    background-color: rgb(3, 52, 110);
+    background-color: black;
     height: 60px;
     display: flex;
     justify-content: space-between;
@@ -12,9 +12,9 @@
     padding-left: 10px;
 }
 .HomeNav h1{
-    color: rgb(226, 226, 182);
+    color: white;
 }
-.HomeContainer{
+.HomeNavContainer{
     width: 90%;
     height: 60px;
     display: flex;
@@ -23,12 +23,19 @@
     flex-direction: row;
     padding-right: 10px;
 }
-.HomeContainer a{
-    color: rgb(226, 226, 182);
+.HomeNavContainer a{
+    color: white;
     text-decoration: none;
     margin-left: 15px;
     font-size: 22px;
 }
-.HomeBackground{
-    width: 100%;
+.HomeBodyContainer{
+    color: white;
+    height: 100vh;
+    background-image: url(../images/web_background.jpg);
+    background-size: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
 }

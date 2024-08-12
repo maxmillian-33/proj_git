@@ -2,19 +2,20 @@
     margin: 0;
     padding: 0;
 }
-nav{
+.UserNav{
     height: 60px;
-    background-color: rgb(3, 52, 110);
+    background-color: black;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     padding-left: 10px;
+    padding-right: 10px;
 }
-nav h1{
-    color: rgb(226, 226, 182);
+.UserNavHeading{
+    color: white;
 }
-.UserContainer{
+.UserNavContainer{
     width: 80%;
     height: 60px;
     display: flex;
@@ -22,15 +23,19 @@ nav h1{
     align-items: center;
     flex-direction: row;
 }
-.UserContainer a{
-    color: rgb(226, 226, 182);
+.UserNavContainer a{
+    color: white;
     margin-left: 15px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
 }
 .UserBodyContainer{
+    background-image: url(../images/web_background.jpg);
+    background-size: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    color: white;
 }

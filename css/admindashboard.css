@@ -4,15 +4,15 @@
 }
 .AdminNav{
     height: 60px;
-    background-color: rgb(3, 52, 110);
+    background-color: black;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     padding-left: 10px;
 }
 .AdminNav h1{
-    color: rgb(226, 226, 182);
+    color: white;
 }
 .AdminContainer{
     width: 80%;
@@ -21,16 +21,21 @@
     justify-content: end;
     align-items: center;
     flex-direction: row;
+    padding-right: 10px;
 }
 .AdminContainer a{
-    color: rgb(226, 226, 182);
+    color: white;
     margin-left: 15px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
 }
 .AdminBodyContainer{
+    background-image: url(../images/web_background.jpg);
+    background-size: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    color: white;
 }

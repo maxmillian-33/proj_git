@@ -8,13 +8,13 @@
             <h1 class="RegisterNavHeading">Register</h1>
             <div class="RegisterNavContainer">
                 <a href="home.html">Home</a>
-                <a href="login.html">Login</a>
+                <a href="login.php">Login</a>
                 <a href="register.php">Register</a>
             </div>
         </nav>
         <div class="RegisterContainer">
             <form class="RegisterForm" action="" method="post" name="registration">
-                <h1 class="RegisterHeading"><u>Register</u></h1>
+                <h1 class="RegisterHeading">Register</h1>
                 <input class="RegisterInput" type="text" name="name" placeholder="Enter your name">
                 <input class="RegisterInput" type="email" name="email" placeholder="Enter your email">
                 <input class="RegisterInput" type="number" name="phone" placeholder="Enter Your phone number">
