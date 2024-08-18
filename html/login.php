@@ -32,15 +32,26 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM `users` WHERE `email`='$email' AND `password`='$password'";
+        $sql = "SELECT * FROM `login` WHERE `email`='$email' AND `password`='$password'";
 
         $data = mysqli_query($conn, $sql);
 
         if($data){
             $row = mysqli_num_rows($data);
             if($row > 0){
-                header('Location: userdashboard.html');  
-                exit();
+                $value = mysqli_fetch_assoc($data);
+                if($value['user_code'] == 0){
+                    header('Location: candidatedashboard.html');
+                    exit();
+                }
+                else if($value['user_code'] == 1){
+                    header('Location: userdashboard.html');
+                    exit();
+                }
+                else{
+                    header('Location: admindashboard.php');
+                    exit();
+                }
             } else {
                 echo "<script>alert('User Not Found')</script>";
             }

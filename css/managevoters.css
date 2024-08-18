@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.AdminNav{
+.ManVotersNav{
     height: 60px;
     background-color: black;
     display: flex;
@@ -11,10 +11,10 @@
     flex-direction: row;
     padding-left: 10px;
 }
-.AdminNav h1{
+.ManVotersNav h1{
     color: white;
 }
-.AdminContainer{
+.ManVotersContainer{
     width: 80%;
     height: 60px;
     display: flex;
@@ -23,13 +23,13 @@
     flex-direction: row;
     padding-right: 10px;
 }
-.AdminContainer a{
+.ManVotersContainer a{
     color: white;
     margin-left: 20px;
     text-decoration: none;
     font-size: 22px;
 }
-.AdminBodyContainer{
+.ManVotersBodyContainer{
     background-image: url(../images/web_background.jpg);
     background-size: 100%;
     height: 100vh;
@@ -38,4 +38,20 @@
     flex-direction: column;
     /* justify-content: center; */
     color: white;
+}
+th{
+    width: 50px;
+    height: 20px;
+    background-color: white;
+}
+td{
+    width: 50px;
+    height: 20px;
+    background-color: white;
+    text-align: center;
+}
+table{
+    width: 60%;
+    height: 300px;
+    margin-top: 30px;
 }

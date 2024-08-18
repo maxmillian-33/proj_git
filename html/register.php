@@ -35,13 +35,15 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
+        // $user_type = $_POST['user_type'];
         $password = $_POST['password'];
         $confirm = $_POST['confirm'];
 
         if($password === $confirm){
-            $sql = "INSERT INTO `users`(`name`, `email`, `phone`, `password`) VALUES ('$name','$email','$phone','$password')";
+            $sql = "INSERT INTO `users`(`name`, `email`, `phone`, `password`) VALUES ('$name','$email','$phone', '$password')";
             $data = mysqli_query($conn, $sql);
-
+            $sql2 = "INSERT INTO `login`(`email`, `password`,`user_code`) VALUES ('$email','$password','1')";
+            $data2 = mysqli_query($conn, $sql2);
             if($data){
                 echo "<script>alert('Registration Completed')</script>";
             }

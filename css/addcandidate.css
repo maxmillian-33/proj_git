@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.AddCandidateContainer{
+    background-image: url(../images/web_background.jpg);
+    background-size: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.AddCandidateForm{
+    /* background-color: rgb(3, 52, 110); */
+    backdrop-filter: blur(5px);
+    width: 350px;
+    height: 425px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    outline-style: solid;
+    outline-color: white;
+}
+.AddCandidateInput{
+    background-color: white;
+    width: 80%;
+    height: 35px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+.AddCandidateSubmit{
+    background-color: rgb(16, 16, 16);
+    color: white;
+    width: 40%;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+.AddCandidateHeading{
+    color: rgb(0, 0, 0);;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+.AddCandidateNav{
+    height: 60px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 10px;
+}
+.AddCandidateNav h1{
+    color: white;
+}
+.AddCandidateNavContainer{
+    width: 70%;
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 10px;
+}
+.AddCandidateNavContainer a{
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 22px;
+}
+th{
+    width: 50px;
+    height: 20px;
+    background-color: white;
+}
+td{
+    width: 50px;
+    height: 20px;
+    background-color: white;
+    text-align: center;
+}
+table{
+    width: 60%;
+    height: 300px;
+    margin-top: 30px;
+}
+.AddCan{
+    background-image: url(../images/web_background.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    color: white;
+}
