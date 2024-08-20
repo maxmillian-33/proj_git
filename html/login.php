@@ -8,7 +8,7 @@
             <h1 class="LoginNavHeading">Login</h1>
             <div class="LoginNavContainer">
                 <a href="home.html">Home</a>
-                <a href="login.php">Login</a>
+                <a href="login.php"><u>Login</u></a>
                 <a href="register.php">Register</a>
             </div>
         </nav>

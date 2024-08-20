@@ -1,25 +1,27 @@
 <html>
     <head>
         <title>Manage Users</title>
-        <link rel="stylesheet" href="../css/managevoters.css">
+        <link rel="stylesheet" href="../css/viewcandidates.css">
     </head>
     <body>
-        <nav class="ManVotersNav">
-            <h1 class="ManVotersNavHeading">Manage Voters</h1>
-            <div class="ManVotersNavContainer">
+        <nav class="ViewCandidatesNav">
+            <h1 class="ViewCandidatesNavHeading">View Candidates</h1>
+            <div class="ViewCandidatesNavContainer">
                 <a href="admindashboard.php">Home</a>
+                <a href="addcandidate.php">Add Candidate</a>
+                <a href="viewcandidates.php"><u>View Candidates</u></a>
             </div>
         </nav>
-        <div class="ManVotersBodyContainer">
-            <h1>Manage Voters</h1>
+        <div class="ViewCandidatesBodyContainer">
+            <h1>Candidates</h1>
 
-<?php
+            <?php
     $conn = mysqli_connect("localhost", "root", "", "online_election_system");
     if(!$conn){
         echo "Database not connected";
     }
 
-    $sql = "SELECT * FROM `users`";
+    $sql = "SELECT * FROM `candidates`";
     $data=mysqli_query($conn,$sql);
     if(mysqli_num_rows($data)>0){
     

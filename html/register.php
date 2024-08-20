@@ -9,7 +9,7 @@
             <div class="RegisterNavContainer">
                 <a href="home.html">Home</a>
                 <a href="login.php">Login</a>
-                <a href="register.php">Register</a>
+                <a href="register.php"><u>Register</u></a>
             </div>
         </nav>
         <div class="RegisterContainer">

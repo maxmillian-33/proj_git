@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.ManElectionContainer{
+    background-image: url(../images/web_background.jpg);
+    background-size: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.ManElectionForm{
+    /* background-color: rgb(3, 52, 110); */
+    backdrop-filter: blur(5px);
+    width: 300px;
+    height: 425px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    outline-style: solid;
+    outline-color: white;
+}
+.ManElectionInput{
+    background-color: white;
+    width: 80%;
+    height: 35px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+.ManElectionSubmit{
+    background-color: rgb(16, 16, 16);
+    color: white;
+    width: 40%;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+.ManElectionHeading{
+    color: rgb(0, 0, 0);;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    font-size: 40px;
+}
+.ManElectionNav{
+    height: 60px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 10px;
+}
+.ManElectionNav h1{
+    color: white;
+}
+.ManElectionNavContainer{
+    width: 70%;
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 10px;
+}
+.ManElectionNavContainer a{
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 22px;
+}
+.ManElectionNavContainer a:hover{
+    text-decoration: underline;
+}
+.ManElectionNavContainer a:hover{
+    text-decoration: underline;
+}

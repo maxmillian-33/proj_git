@@ -29,6 +29,9 @@
     margin-left: 15px;
     font-size: 22px;
 }
+.HomeNavContainer a:hover{
+    text-decoration: underline;
+}
 .HomeBodyContainer{
     color: white;
     height: 100vh;

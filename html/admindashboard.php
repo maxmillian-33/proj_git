@@ -6,8 +6,8 @@
     </head>
     <body>
     <nav class="AdminNav">
-        <h1 class="AdminHeading">Online Election System</h1>
-        <div class="AdminContainer">
+        <h1 class="AdminNavHeading">Admin Dashboard</h1>
+        <div class="AdminNavContainer">
             <a href="manageelection.php">Manage Election</a>
             <a href="managevoters.php">Manage Voters</a>
             <a href="addcandidate.php">Manage Candidates</a>

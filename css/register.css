@@ -76,3 +76,6 @@
     text-decoration: none;
     font-size: 22px;
 }
+.RegisterNavContainer a:hover{
+    text-decoration: underline;
+}

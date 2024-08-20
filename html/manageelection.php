@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Manage Election</title>
-        <link rel="stylesheet" href="../css/register.css">
+        <link rel="stylesheet" href="../css/manageelection.css">
     </head>
     <body>
         <nav class="ManElectionNav">
