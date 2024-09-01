@@ -7,9 +7,9 @@
         <nav class="RegisterNav">
             <h1 class="RegisterNavHeading">Register</h1>
             <div class="RegisterNavContainer">
-                <a href="home.html">Home</a>
-                <a href="login.php">Login</a>
-                <a href="register.php"><u>Register</u></a>
+            <a href="home.html"><img class="NavHomeImage" src="../images/home.png" alt="">Home</a>
+            <a href="login.php"> <img class="NavLoginImage" src="../images/login.png" alt="">Login</a>
+            <!-- <a href="register.php"><img class="NavRegisterImage" src="../images/register.png" alt="">Register </a> -->
             </div>
         </nav>
         <div class="RegisterContainer">
@@ -35,7 +35,6 @@
         $name = $_POST['name'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        // $user_type = $_POST['user_type'];
         $password = $_POST['password'];
         $confirm = $_POST['confirm'];
 
@@ -46,6 +45,8 @@
             $data2 = mysqli_query($conn, $sql2);
             if($data){
                 echo "<script>alert('Registration Completed')</script>";
+                header('Location: register.php');
+                exit();
             }
             else{
                 echo "<script>alert('Registration Not Completed')</script>";

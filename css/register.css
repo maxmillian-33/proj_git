@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
 }
 .RegisterContainer{
     background-image: url(../images/web_background.jpg);
@@ -14,7 +15,7 @@
 .RegisterForm{
     /* background-color: rgb(3, 52, 110); */
     backdrop-filter: blur(5px);
-    width: 300px;
+    width: 320px;
     height: 425px;
     display: flex;
     justify-content: center;
@@ -23,15 +24,23 @@
     border-radius: 12px;
     outline-style: solid;
     outline-color: white;
+    box-shadow: 0 4px 16px black;
 }
 .RegisterInput{
-    background-color: white;
+    /* background-color: white; */
+    color: white;
     width: 80%;
     height: 35px;
     margin-top: 15px;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     border: none;
     outline: none;
+    background: transparent;
+    border-bottom: 2px solid black;
+}
+.RegisterInput:hover{
+    border-color: white;
+    box-shadow: 0 2px 4px black;
 }
 .RegisterSubmit{
     background-color: rgb(16, 16, 16);
@@ -50,7 +59,7 @@
     font-size: 40px;
 }
 .RegisterNav{
-    height: 60px;
+    height: 70px;
     background-color: black;
     display: flex;
     justify-content: space-between;
@@ -63,7 +72,7 @@
 }
 .RegisterNavContainer{
     width: 90%;
-    height: 60px;
+    height: 100%;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -78,4 +87,22 @@
 }
 .RegisterNavContainer a:hover{
     text-decoration: underline;
+}
+.NavHomeImage{
+    width: 20px;
+    height: 20px;
+    margin-bottom: -1px;
+    margin-right: 3px;
+}
+.NavLoginImage{
+    width: 20px;
+    height: 20px;
+    margin-bottom: -3px;
+    margin-right: 3px;
+}
+.NavRegisterImage{
+    width: 20px;
+    height: 20px;
+    margin-bottom: -3px;
+    margin-right: 3px;
 }

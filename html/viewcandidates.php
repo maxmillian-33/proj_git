@@ -7,9 +7,9 @@
         <nav class="ViewCandidatesNav">
             <h1 class="ViewCandidatesNavHeading">View Candidates</h1>
             <div class="ViewCandidatesNavContainer">
-                <a href="admindashboard.php">Home</a>
-                <a href="addcandidate.php">Add Candidate</a>
-                <a href="viewcandidates.php"><u>View Candidates</u></a>
+            <a href="admindashboard.php"><img class="NavHomeImage" src="../images/home.png" alt="">Home</a>
+                <a href="addcandidate.php"><img class="NavAddCanImage" src="../images/add_candidates.png" alt="">Add Candidate</a>
+                <a href="viewcandidates.php"><img class="NavViewCanImage" src="../images/view_candidate.png" alt=""><u>View Candidates</u></a>
             </div>
         </nav>
         <div class="ViewCandidatesBodyContainer">
@@ -34,11 +34,18 @@
         echo "</tr>";
 
         while($row=mysqli_fetch_assoc($data)){
+            $email = $row['email'];
             echo "<tr>";
             echo "<td>".$row['name']."</td>";
             echo "<td>".$row['email']."</td>";
             echo "<td>".$row['phone']."</td>";
             echo "<td>".$row['user_id']."</td>";
+            echo "<td>
+                    <form method='POST'>
+                        <button value='$email' name='userdel' type='submit'>Delete</button>
+                    </form>
+                </td>";
+            echo "<td><button>Edit</button></td>";
             echo "</tr>";
 
         }
@@ -49,3 +56,20 @@
         </div>
     </body>
 </html>
+<?php
+$conn = mysqli_connect("localhost", "root", "", "online_election_system");
+if(!$conn){
+    echo "Database not connected";
+}
+
+if(isset($_POST['userdel'])){
+    $email = $_POST['userdel'];
+    if(!empty($_POST['userdel'])){
+        $sql = "DELETE FROM `candidates` WHERE `email`='$email'";
+        $data = mysqli_query($conn, $sql);
+        $sql1 = "DELETE FROM `login` WHERE `email`='$email'";
+        $data1 = mysqli_query($conn, $sql1);
+        echo "<script>window.location.replace('../html/viewcandidates.php');</script>";
+    }
+}
+?>

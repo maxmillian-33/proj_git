@@ -7,9 +7,9 @@
         <nav class="AddCandidateNav">
             <h1 class="AddCandidateNavHeading">Add Candidate</h1>
             <div class="AddCandidateNavContainer">
-                <a href="admindashboard.php">Home</a>
-                <a href="addcandidate.php"><u>Add Candidate</u></a>
-                <a href="viewcandidates.php">View Candidates</a>
+                <a href="admindashboard.php"><img class="NavHomeImage" src="../images/home.png" alt="">Home</a>
+                <a href="addcandidate.php"><img class="NavAddCanImage" src="../images/add_candidates.png" alt=""><u>Add Candidate</u></a>
+                <a href="viewcandidates.php"><img class="NavViewCanImage" src="../images/view_candidate.png" alt="">View Candidates</a>
             </div>
         </nav>
         <div class="AddCandidateContainer">
