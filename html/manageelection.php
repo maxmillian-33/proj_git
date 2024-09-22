@@ -8,7 +8,7 @@
             <h1 class="ManElectionNavHeading">Manage Election</h1>
             <div class="ManElectionNavContainer">
             <a href="admindashboard.php"><img class="NavHomeImage" src="../images/home.png" alt="">Home</a>
-                <a href="manageelection.php">Add Election</a>
+            <a href="manageelection.php"><img src="../images/add_election.png" alt="" class="NavAddElecImage"> Add Election</a>
                 <a href="viewelection.php">View Election</a>
             </div>
         </nav>

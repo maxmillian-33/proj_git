@@ -1,0 +1,99 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('../images/web_background.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Profile Container */
+.profile-container {
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Profile Image */
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #007bff;
+}
+
+/* Profile Details */
+.profile-details h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #007bff; /* Blue color for name */
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Strong text for labels */
+.profile-details strong {
+    color: #333;
+}
+
+.profile-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.profile-details a:hover {
+    text-decoration: underline;
+}
+
+/* Add button styling for Change Password link */
+.profile-details a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.profile-details a:hover {
+    background-color: #0056b3;
+}
+
+/* Add some spacing for focus and hover states */
+input:focus,
+button:focus {
+    outline: none;
+}
+
+/* For responsiveness on smaller screens */
+@media (max-width: 480px) {
+    .profile-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .profile-details h1 {
+        font-size: 20px;
+    }
+}

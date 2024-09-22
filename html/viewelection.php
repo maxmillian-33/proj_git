@@ -57,17 +57,17 @@
     </body>
 </html>
 <?php
-$conn = mysqli_connect("localhost", "root", "", "online_election_system");
-if(!$conn){
-    echo "Database not connected";
-}
-
-if(isset($_POST['electiondel'])){
-    $id = $_POST['electiondel'];
-    if(!empty($_POST['electiondel'])){
-        $sql = "DELETE FROM `election` WHERE `election_id`='$id'";
-        $data = mysqli_query($conn, $sql);
-        echo "<script>window.location.replace('../html/viewelection.php');</script>";
+    $conn = mysqli_connect("localhost", "root", "", "online_election_system");
+    if(!$conn){
+        echo "Database not connected";
     }
-}
+
+    if(isset($_POST['electiondel'])){
+        $id = $_POST['electiondel'];
+        if(!empty($_POST['electiondel'])){
+            $sql = "DELETE FROM `election` WHERE `election_id`='$id'";
+            $data = mysqli_query($conn, $sql);
+            echo "<script>window.location.replace('../html/viewelection.php');</script>";
+        }
+    }
 ?>

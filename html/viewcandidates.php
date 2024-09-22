@@ -45,7 +45,11 @@
                         <button value='$email' name='userdel' type='submit'>Delete</button>
                     </form>
                 </td>";
-            echo "<td><button>Edit</button></td>";
+            echo "<td>
+                    <form method='POST' action='editcandidate.php'>
+                        <button value='$email' name='userdel' type='submit'>Edit</button>
+                    </form>
+                </td>";
             echo "</tr>";
 
         }

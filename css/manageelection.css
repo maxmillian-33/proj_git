@@ -37,6 +37,14 @@
     background: transparent;
     border-bottom: 2px solid black;
 }
+.LoginInput:hover{
+    border-color: white;
+    box-shadow: 0 2px 4px black;
+}
+.LoginInput:focus{
+    border-color: white;
+    box-shadow: 0 2px 4px black;
+}
 .ManElectionSubmit{
     background-color: rgb(16, 16, 16);
     color: white;
@@ -90,5 +98,17 @@
     width: 20px;
     height: 20px;
     margin-bottom: -1px;
+    margin-right: 3px;
+}
+.NavAddElecImage{
+    width: 25px;
+    height: 25px;
+    margin-bottom: -3px;
+    margin-right: 3px;
+}
+.NavViewCanImage{
+    width: 23px;
+    height: 23px;
+    margin-bottom: -4px;
     margin-right: 3px;
 }

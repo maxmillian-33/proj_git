@@ -20,6 +20,7 @@
                 <input class="AddCandidateInput" type="number" name="phone" placeholder="Enter Your phone number">
                 <input class="AddCandidateInput" type="password" name="password" placeholder="Enter your password">
                 <input class="AddCandidateInput" type="password" name="confirm" placeholder="Confirm Password">
+                <input class="AddCandidateInput" type="file" name="image" placeholder="Enter profile picture">
                 <input class="AddCandidateSubmit" type="submit" value="Add Candidate" name="submit">
             </form>
         </div>
@@ -38,9 +39,10 @@
         // $user_type = $_POST['user_type'];
         $password = $_POST['password'];
         $confirm = $_POST['confirm'];
+        $image = $_POST['image'];
 
         if($password === $confirm){
-            $sql = "INSERT INTO `candidates`(`name`, `email`, `phone`, `password`) VALUES ('$name','$email','$phone', '$password')";
+            $sql = "INSERT INTO `candidates`(`name`, `email`, `phone`, `password`, `image`) VALUES ('$name','$email','$phone', '$password', '$image')";
             $data = mysqli_query($conn, $sql);
             $sql2 = "INSERT INTO `login`(`email`, `password`,`user_code`) VALUES ('$email','$password','0')";
             $data2 = mysqli_query($conn, $sql2);
