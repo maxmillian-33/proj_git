@@ -1,0 +1,92 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation styles */
+.UpdateProfileNav {
+    height: 70px;
+    background-color: #343a40; /* Dark background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.UpdateProfileNav h1 {
+    color: white;
+}
+
+.UpdateProfileNavContainer a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.UpdateProfileNavContainer a:hover {
+    text-decoration: underline;
+}
+
+/* Update profile container styles */
+.UpdateProfileContainer {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.UpdateProfileForm, .UpdatePasswordForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.UpdateProfileForm input, .UpdatePasswordForm input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.UpdateProfileForm input[type="file"] {
+    border: none;
+}
+
+/* Submit button styles */
+.UpdateProfileForm input[type="submit"], .UpdatePasswordForm input[type="submit"] {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.UpdateProfileForm input[type="submit"]:hover, .UpdatePasswordForm input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Change password section styles */
+h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #007bff; /* Blue color */
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .UpdateProfileContainer {
+        width: 90%;
+        padding: 15px;
+    }
+}
