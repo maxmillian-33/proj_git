@@ -47,7 +47,7 @@ $masked_password = str_repeat('*', strlen($password_row['password']));
         <h1 class="UserDashboardHeading">Welcome, <?php echo htmlspecialchars($user['name']); ?></h1>
         <div class="UserDashboardNavContainer">
             <a href="update_user_profile.php">Update Profile</a>
-            <a href="login.php">Logout</a>
+            <a href="logout.php">Logout</a>
         </div>
     </nav>
 

@@ -49,7 +49,7 @@ $masked_password = str_repeat('*', strlen($password_row['password']));
         <h1 class="CandidateDashboardHeading">Welcome, <?php echo htmlspecialchars($candidate['name']); ?></h1>
         <div class="CandidateDashboardNavContainer">
             <a href="update_candidate_profile.php"> Update Profile</a>
-            <a href="login.php">Logout</a>
+            <a href="logout.php">Logout</a>
         </div>
     </nav>
 

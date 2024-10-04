@@ -10,7 +10,7 @@
             <a href="manageelection.php"><img class="NavManElecImage" src="../images/election.png" alt="">Manage Election</a>
             <a href="managevoters.php"><img class="NavManVoteImage" src="../images/voter.png" alt="">Manage Voters</a>
             <a href="addcandidate.php"><img class="NavManCanImage" src="../images/candidate.png" alt="">Manage Candidates</a>
-            <a href="login.php"><img class="NavLogoutImage" src="../images/logout.png" alt="">Logout</a>
+            <a href="logout.php"><img class="NavLogoutImage" src="../images/logout.png" alt="">Logout</a>
         </div>
     </nav>
         <div class="AdminBodyContainer">
