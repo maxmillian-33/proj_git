@@ -62,6 +62,12 @@ body {
     border: none;
 }
 
+/* Style for address field */
+.UpdateProfileForm input[name="address"] {
+    height: 100px; /* Adjust the height */
+    resize: vertical; /* Allow vertical resizing */
+}
+
 /* Submit button styles */
 .UpdateProfileForm input[type="submit"], .UpdatePasswordForm input[type="submit"] {
     background-color: #007bff; /* Blue color */
@@ -89,4 +95,14 @@ h2 {
         width: 90%;
         padding: 15px;
     }
+}
+/* Update profile container styles */
+.UpdateProfileForm textarea {
+    width: 100%; /* Make it take the full width */
+    height: 100px; /* Adjust the height as needed */
+    padding: 10px; /* Add some padding for better aesthetics */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below */
+    resize: vertical; /* Allow vertical resizing */
 }

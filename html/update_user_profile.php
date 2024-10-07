@@ -26,6 +26,10 @@ $user = mysqli_fetch_assoc($result);
 if (isset($_POST['update'])) {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $dob = $_POST['dob'];
+    $age = $_POST['age'];
+    $aadhar_number = $_POST['aadhar_number'];
 
     // Handle profile picture upload
     if ($_FILES['image']['name']) {
@@ -39,7 +43,9 @@ if (isset($_POST['update'])) {
             if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
                 $image_path = basename($_FILES["image"]["name"]);
                 // Update user details in the database
-                $update_sql = "UPDATE `users` SET `name` = '$name', `phone` = '$phone', `image` = '$image_path' WHERE `email` = '$email'";
+                $update_sql = "UPDATE `users` SET `name` = '$name', `phone` = '$phone', `image` = '$image_path', 
+                               `address` = '$address', `dob` = '$dob', `age` = '$age', `aadhar_number` = '$aadhar_number' 
+                               WHERE `email` = '$email'";
             } else {
                 echo "<script>alert('Sorry, there was an error uploading your file.')</script>";
             }
@@ -48,15 +54,17 @@ if (isset($_POST['update'])) {
         }
     } else {
         // Update user details without changing the image
-        $update_sql = "UPDATE `users` SET `name` = '$name', `phone` = '$phone' WHERE `email` = '$email'";
+        $update_sql = "UPDATE `users` SET `name` = '$name', `phone` = '$phone', 
+                       `address` = '$address', `dob` = '$dob', `age` = '$age', `aadhar_number` = '$aadhar_number' 
+                       WHERE `email` = '$email'";
     }
 
     // Execute the update query
     if (mysqli_query($conn, $update_sql)) {
         echo "<script>alert('Profile updated successfully!');</script>";
-        // Refresh user information
-        $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_assoc($result);
+        // Redirect to the user dashboard
+        header('Location: user_dashboard.php');
+        exit();
     } else {
         echo "<script>alert('Error updating profile: " . mysqli_error($conn) . "');</script>";
     }
@@ -83,10 +91,14 @@ if (isset($_POST['update'])) {
 
     <div class="UpdateProfileContainer">
         <form class="UpdateProfileForm" action="" method="post" enctype="multipart/form-data">
-            <h2>Edit Your Information</h2>
+            <h2>Edit Your Profile</h2>
             <input type="text" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
             <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" readonly>
             <input type="number" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" required>
+            <textarea name="address" placeholder="Address" required><?php echo htmlspecialchars($user['address']); ?></textarea>
+            <input type="date" name="dob" placeholder="Date of Birth" value="<?php echo htmlspecialchars($user['dob']); ?>" required>
+            <input type="number" name="age" placeholder="Age" value="<?php echo htmlspecialchars($user['age']); ?>" required>
+            <input type="number" name="aadhar_number" placeholder="Aadhar Number" value="<?php echo htmlspecialchars($user['aadhar_number']); ?>" required>
             <input type="file" name="image" accept="image/*">
             <input type="submit" value="Update Profile" name="update">
         </form>

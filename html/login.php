@@ -57,7 +57,8 @@ if (isset($_POST['login'])) {
     <nav class="LoginNav">
         <h1 class="LoginNavHeading">Login</h1>
         <div class="LoginNavContainer">
-            <a href="home2.php"><img class="NavHomeImage" src="../images/home.png" alt="">Home</a>
+            <a href="home.php"><img class="NavHomeImage" src="../images/home.png" alt="">Home</a>
+            <a href="login.php"> <img class="NavLoginImage" src="../images/login.png" alt="">Login</a>
             <a href="register.php"><img class="NavRegisterImage" src="../images/register.png" alt="">Register</a>
         </div>
     </nav>

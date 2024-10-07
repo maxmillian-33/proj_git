@@ -1,0 +1,1 @@
+CREATE TABLE election_candidates ( id INT AUTO_INCREMENT PRIMARY KEY, election_id INT, candidate_id INT );

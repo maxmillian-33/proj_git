@@ -13,17 +13,32 @@
         <div class="ManVotersBodyContainer">
             <h1>Voters</h1>
 
+            <!-- Search Form -->
+            <form method="POST">
+                <input type="text" name="search_name" placeholder="Search by name">
+                <input type="submit" name="search" value="Search">
+            </form>
+
 <?php
     $conn = mysqli_connect("localhost", "root", "", "online_election_system");
     if(!$conn){
         echo "Database not connected";
     }
 
+    // Initialize the query
     $sql = "SELECT * FROM `users`";
-    $data=mysqli_query($conn,$sql);
-    if(mysqli_num_rows($data)>0){
+
+    // Check if the search button is clicked and a search term is provided
+    if (isset($_POST['search']) && !empty($_POST['search_name'])) {
+        $search_name = $_POST['search_name'];
+        // Modify the query to filter by name
+        $sql .= " WHERE `name` LIKE '%$search_name%'";
+    }
+
+    $data = mysqli_query($conn, $sql);
     
-        echo "<table border=1 >";
+    if(mysqli_num_rows($data) > 0){
+        echo "<table border=1>";
         echo "<tr>";
         echo "<th>Name</th>";
         echo "<th>Email</th>";
@@ -31,8 +46,8 @@
         echo "<th>User ID</th>";
         echo "</tr>";
 
-        while($row=mysqli_fetch_assoc($data)){
-            $email=$row['email'];
+        while($row = mysqli_fetch_assoc($data)){
+            $email = $row['email'];
             echo "<tr>";
             echo "<td>".$row['name']."</td>";
             echo "<td>".$row['email']."</td>";
@@ -44,30 +59,27 @@
                         </form>
                     </td>";
             echo "</tr>";
-
         }
         echo "</table>";
-
+    } else {
+        echo "<p>No voters found matching the search criteria.</p>";
     }
 ?>
+
         </div>
     </body>
 </html>
 
 <?php
-    $conn = mysqli_connect("localhost", "root", "", "online_election_system");
-    if(!$conn){
-        echo "Database not connected";
-    }
-
+    // Handle user deletion
     if(isset($_POST['userdel'])){
         $email = $_POST['userdel'];
-        if(!empty($_POST['userdel'])){
+        if(!empty($email)){
             $sql = "DELETE FROM `users` WHERE `email`='$email'";
             $data = mysqli_query($conn, $sql);
             $sql1 = "DELETE FROM `login` WHERE `email`='$email'";
             $data1 = mysqli_query($conn, $sql1);
-            echo "<script>window.location.replace('../html/managevoters.php');</script>";
+            echo "<script>window.location.replace('managevoters.php');</script>";
         }
     }
 ?>

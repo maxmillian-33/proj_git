@@ -87,7 +87,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <input type="submit" value="Change Password">
         </form>
-        <button onclick="window.location.href='candidate_dashboard.php'">Back to Dashboard</button>
+        <?php if ($user_code == 0): ?>
+            <button onclick="window.location.href='candidate_dashboard.php'">Back to Dashboard</button>
+        <?php else: ?>
+            <button onclick="window.location.href='user_dashboard.php'">Back to Dashboard</button>
+        <?php endif; ?>
+        
     </div>
 
 </body>

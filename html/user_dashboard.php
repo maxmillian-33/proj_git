@@ -35,12 +35,14 @@ $masked_password = str_repeat('*', strlen($password_row['password']));
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="../css/user_dashboard.css">
 </head>
+
 <body>
 
     <nav class="UserDashboardNav">
@@ -53,19 +55,23 @@ $masked_password = str_repeat('*', strlen($password_row['password']));
 
     <div class="UserDashboardContainer">
         <h2>Your Profile</h2>
+        <img src="../uploads/<?php echo htmlspecialchars($user['image']); ?>" alt="Profile Picture" class="profile-picture">
         <p><strong>Name:</strong> <?php echo htmlspecialchars($user['name']); ?></p>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
         <p><strong>Phone:</strong> <?php echo htmlspecialchars($user['phone']); ?></p>
-        <p><strong>Password:</strong> <span id="masked-password"><?php echo $masked_password; ?></span> 
+        <p><strong>Password:</strong> <span id="masked-password"><?php echo $masked_password; ?></span>
             <button onclick="window.location.href='change_password.php'" style="margin-left: 10px;">Change Password</button>
         </p>
-        <img src="../uploads/<?php echo htmlspecialchars($user['image']); ?>" alt="Profile Picture" class="profile-picture">
-
+        <p><strong>Address:</strong> <?php echo htmlspecialchars($user['address']); ?></p>
+        <p><strong>Date of Birth:</strong> <?php echo htmlspecialchars($user['dob']); ?></p>
+        <p><strong>Age:</strong> <?php echo htmlspecialchars($user['age']); ?></p>
+        <p><strong>Aadhaar Number:</strong> <?php echo htmlspecialchars($user['aadhar_number']); ?></p>
         <h2>Actions</h2>
         <ul>
-            
+
         </ul>
     </div>
 
 </body>
+
 </html>
