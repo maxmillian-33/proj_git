@@ -31,6 +31,32 @@ $password_result = mysqli_query($conn, $password_query);
 $password_row = mysqli_fetch_assoc($password_result);
 $masked_password = str_repeat('*', strlen($password_row['password']));
 
+// Retrieve ongoing elections
+$election_query = "
+    SELECT e.election_id, e.start_date, e.title, e.description 
+    FROM election e
+    WHERE e.start_date >= CURDATE()
+    ORDER BY e.start_date
+";
+
+$election_result = mysqli_query($conn, $election_query);
+if (!$election_result) {
+    die("Error in election query: " . mysqli_error($conn));
+}
+$elections = mysqli_fetch_all($election_result, MYSQLI_ASSOC);
+
+// Prepare calendar
+$calendar = [];
+foreach ($elections as $election) {
+    $date = date('Y-m-d', strtotime($election['start_date']));
+    $calendar[$date][] = $election;
+}
+
+// Create a simple calendar for the current month
+$month = date('m');
+$year = date('Y');
+$daysInMonth = cal_days_in_month(CAL_GREGORIAN, $month, $year);
+$firstDay = date('w', strtotime("$year-$month-01"));
 ?>
 
 <!DOCTYPE html>
@@ -66,10 +92,38 @@ $masked_password = str_repeat('*', strlen($password_row['password']));
         <p><strong>Date of Birth:</strong> <?php echo htmlspecialchars($user['dob']); ?></p>
         <p><strong>Age:</strong> <?php echo htmlspecialchars($user['age']); ?></p>
         <p><strong>Aadhaar Number:</strong> <?php echo htmlspecialchars($user['aadhar_number']); ?></p>
-        <h2>Actions</h2>
-        <ul>
+        
+        <h2>Election Calendar</h2>
+        <div class="calendar">
+            <div class="header">Sun</div>
+            <div class="header">Mon</div>
+            <div class="header">Tue</div>
+            <div class="header">Wed</div>
+            <div class="header">Thu</div>
+            <div class="header">Fri</div>
+            <div class="header">Sat</div>
 
-        </ul>
+            <?php for ($i = 0; $i < $firstDay; $i++): ?>
+                <div></div>
+            <?php endfor; ?>
+
+            <?php for ($day = 1; $day <= $daysInMonth; $day++): ?>
+                <?php 
+                $currentDate = "$year-$month-" . str_pad($day, 2, '0', STR_PAD_LEFT);
+                ?>
+                <div>
+                    <?php echo $day; ?>
+                    <?php if (isset($calendar[$currentDate])): ?>
+                        <?php foreach ($calendar[$currentDate] as $election): ?>
+                            <div class="election">
+                                <strong><?php echo htmlspecialchars($election['title']); ?></strong><br>
+                                <?php echo htmlspecialchars($election['description']); ?>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </div>
+            <?php endfor; ?>
+        </div>
     </div>
 
 </body>

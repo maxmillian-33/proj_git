@@ -1,102 +1,141 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f3;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
+h1, h2 {
+    color: #34495e;
+}
+
+/* Navigation Styles */
 .UserDashboardNav {
-    height: 70px;
-    background-color: #343a40; /* Dark background */
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-}
-
-.UserDashboardHeading {
-    color: white;
-    margin: 0;
-    font-size: 24px;
-}
-
-.UserDashboardNavContainer {
-    display: flex;
-    align-items: center;
-}
-
-.UserDashboardNavContainer a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 16px;
-}
-
-.UserDashboardNavContainer a:hover {
-    text-decoration: underline;
-}
-
-.UserDashboardContainer {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.UserDashboardContainer h2 {
-    color: #343a40;
+.UserDashboardHeading {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.UserDashboardNavContainer a {
+    margin-left: 20px;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.UserDashboardNavContainer a:hover {
+    color: #3498db;
+}
+
+/* Dashboard Container Styles */
+.UserDashboardContainer {
+    max-width: 1200px; /* Increased max width for the dashboard */
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Column layout */
+}
+
+/* Profile Section */
+.profile-section {
+    flex: 1; /* Allow the profile section to take less space */
+    max-width: 400px; /* Set a max width for the profile */
+    margin-right: 20px; /* Space between profile and calendar */
+}
+
+.profile-picture {
+    width: 100px; /* Smaller profile picture */
+    height: 100px;
+    border-radius: 50%;
     margin-bottom: 20px;
-    font-size: 20px;
+    border: 3px solid #3498db;
+}
+
+/* Profile Details Styles */
+.UserDashboardContainer h2 {
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
 }
 
 .UserDashboardContainer p {
-    margin: 10px 0;
-    font-size: 16px;
+    line-height: 1.8;
+    margin: 15px 0;
+    font-size: 1.1em;
 }
 
-.UserDashboardContainer img {
-    width: 150px;
-    height: 150px;
-    /* border-radius: 50%; */
-    margin-top: 15px;
-    border: 2px solid #007bff; /* Border color for the image */
+strong {
+    color: #3498db;
 }
 
-#masked-password {
-    font-weight: bold;
-}
-
+/* Button Styles */
 button {
-    background-color: #007bff; /* Primary button color */
+    background-color: #3498db;
     color: white;
-    padding: 10px 15px;
     border: none;
+    padding: 12px 18px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Election Calendar Styles */
+.calendar {
+    flex: 2; /* Allow the calendar to take more space */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px; /* Increased gap between cells */
+    margin-top: 20px;
+    font-size: 1.2em; /* Larger font size for better readability */
 }
 
-ul li {
-    margin: 5px 0;
+.calendar div {
+    border: 2px solid #ccc; /* Thicker border */
+    padding: 20px; /* More padding for bigger cells */
+    height: 120px; /* Increased height for calendar cells */
+    position: relative;
+    background-color: #f9f9f9; /* Light background for cells */
+    transition: background-color 0.3s; /* Smooth hover effect */
 }
 
-ul li a {
-    text-decoration: none;
-    color: #007bff;
+.calendar div:hover {
+    background-color: #e0f7fa; /* Light blue on hover */
 }
 
-ul li a:hover {
-    text-decoration: underline;
+.calendar .header {
+    background-color: #007bff; /* Header background color */
+    color: white; /* Header text color */
+    font-weight: bold;
+    text-align: center;
+    padding: 10px; /* Added padding for header cells */
+    border-radius: 4px; /* Rounded corners for header */
+}
+
+/* Other Election Styles */
+.election {
+    background-color: #d1e7dd; /* Election background color */
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 0.9em; /* Smaller font size for election details */
+    text-align: center; /* Centered text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
