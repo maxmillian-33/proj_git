@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </nav>
 
     <div class="ChangePasswordContainer">
-        <form action="" method="post">
+        <form action="" method="post" class="ChangePasswordForm">
             <label for="current_password">Current Password:</label>
             <input type="password" name="current_password" required>
             

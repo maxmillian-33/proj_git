@@ -51,7 +51,7 @@ body {
 
 /* Update Profile Container Styles */
 .UpdateProfileContainer {
-    max-width: 800px;
+    max-width: 600px;
     margin: 20px auto;
     background-color: #1e1e1e; /* Dark background for profile */
     padding: 20px;
