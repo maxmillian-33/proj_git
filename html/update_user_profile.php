@@ -77,15 +77,15 @@ if (isset($_POST['update'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Profile</title>
-    <link rel="stylesheet" href="../css/update_candidate_profile.css">
+    <link rel="stylesheet" href="../css/update_user_profile.css">
 </head>
 <body>
 
     <nav class="UpdateProfileNav">
         <h1 class="UpdateProfileHeading">Update Your Profile</h1>
         <div class="UpdateProfileNavContainer">
-            <a href="user_dashboard.php">Back to Dashboard</a>
-            <a href="login.php">Logout</a>
+            <a href="user_profile.php">Back to Profile</a>
+            <a href="logout.php">Logout</a>
         </div>
     </nav>
 

@@ -1,0 +1,153 @@
+/* user_profile.css */
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Navigation Styles */
+.UserProfileNav {
+    background-color: #1e1e1e; /* Slightly lighter dark for the nav */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+.UserProfileNav h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.UserProfileNavContainer {
+    margin-top: 10px;
+}
+
+.UserProfileNavContainer a {
+    color: #bb86fc; /* Purple link color */
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: border 0.3s;
+}
+
+.UserProfileNavContainer a:hover {
+    border: 1px solid #bb86fc; /* Purple border on hover */
+}
+
+/* Profile Container Styles */
+.UserProfileContainer {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #1e1e1e; /* Dark background for profile */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+}
+
+.UserProfileContainer h2 {
+    margin-top: 0;
+    color: #ffffff; /* White heading */
+}
+
+.profile-picture {
+    max-width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+.UserProfileContainer p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: #e0e0e0; /* Light text color for paragraphs */
+}
+
+#masked-password {
+    display: inline-block;
+    padding: 5px;
+    background-color: #424242; /* Dark background for masked password */
+    border-radius: 5px;
+    color: #ffffff; /* White text for masked password */
+}
+/* User Profile Navigation Styles */
+.UserProfileNav {
+    background-color: #1e1e1e; /* Dark background for the navbar */
+    color: #ffffff; /* White text */
+    padding: 15px 20px; /* Adjusted padding for a more spacious look */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between title and links */
+    align-items: center; /* Center vertically */
+    border-bottom: 1px solid #bb86fc; /* Bottom border for separation */
+}
+
+/* Title Styles */
+.UserProfileNav h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600; /* Bold for better emphasis */
+}
+
+/* Navigation Links Container */
+.UserProfileNavContainer {
+    display: flex; /* Flexbox for horizontal layout */
+}
+
+/* Individual Link Styles */
+.UserProfileNavContainer a {
+    color: #bb86fc; /* Purple link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Spacing around links */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    margin-left: 10px; /* Space between links */
+    font-weight: 500; /* Medium weight for better visibility */
+}
+
+/* Hover and Active Link Styles */
+.UserProfileNavContainer a:hover,
+.UserProfileNavContainer a:active {
+    background-color: rgba(187, 134, 252, 0.2); /* Light purple background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .UserProfileNav {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align to the left */
+    }
+    
+    .UserProfileNavContainer {
+        margin-top: 10px; /* Space between title and links */
+        width: 100%; /* Full width for links */
+    }
+
+    .UserProfileNavContainer a {
+        margin-left: 0; /* Remove left margin */
+        width: 100%; /* Links take full width */
+        text-align: center; /* Center align text */
+    }
+}
+
+/* Change Password Button Styles */
+.change-password-button {
+    background-color: #bb86fc; /* Purple background */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding around the button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    margin-left: 10px; /* Space to the left */
+}
+
+/* Button Hover Styles */
+.change-password-button:hover {
+    background-color: #9b59b6; /* Slightly darker purple on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}

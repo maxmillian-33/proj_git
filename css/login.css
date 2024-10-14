@@ -14,7 +14,7 @@
     justify-content: center;
     border-radius: 12px;
     outline-style: solid;
-    outline-color: white;
+    outline-color: black;
     box-shadow: 0 4px 16px black;
 }
 .LoginInput{
@@ -26,7 +26,7 @@
     /* border-radius: 6px; */
     outline: none;
     border: none;
-    color: white;
+    color: black;
     background: transparent;
     border-bottom: 2px solid black;
 }
@@ -49,7 +49,7 @@
     color: white;
 }
 .LoginContainer{
-    background-image: url(../images/web_background.jpg);
+    background-image: url(../images/background2.webp);
     background-size: 100%;
     height: 100vh;
     display: flex;

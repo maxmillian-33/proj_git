@@ -1,4 +1,4 @@
-/* user_dashboard.css */
+/* update_candidate_profile.css */
 
 /* Body Styles */
 body {
@@ -10,7 +10,7 @@ body {
 }
 
 /* Navigation Styles */
-.UserDashboardNav {
+.UpdateProfileNav {
     background-color: #1e1e1e; /* Slightly lighter dark for the nav */
     color: #ffffff; /* White text */
     padding: 15px 20px; /* Adjusted padding */
@@ -20,19 +20,19 @@ body {
     border-bottom: 1px solid #bb86fc; /* Bottom border for separation */
 }
 
-.UserDashboardHeading {
+.UpdateProfileHeading {
     margin: 0;
     font-size: 24px;
     font-weight: 600; /* Bold for emphasis */
 }
 
 /* Navigation Links Container */
-.UserDashboardNavContainer {
+.UpdateProfileNavContainer {
     display: flex; /* Flexbox for horizontal layout */
 }
 
 /* Individual Link Styles */
-.UserDashboardNavContainer a {
+.UpdateProfileNavContainer a {
     color: #bb86fc; /* Purple link color */
     text-decoration: none; /* Remove underline */
     padding: 10px 15px; /* Spacing around links */
@@ -43,93 +43,71 @@ body {
 }
 
 /* Hover and Active Link Styles */
-.UserDashboardNavContainer a:hover,
-.UserDashboardNavContainer a:active {
+.UpdateProfileNavContainer a:hover,
+.UpdateProfileNavContainer a:active {
     background-color: rgba(187, 134, 252, 0.2); /* Light purple background on hover */
     color: #ffffff; /* White text on hover */
 }
 
-/* User Dashboard Container Styles */
-.UserDashboardContainer {
+/* Update Profile Container Styles */
+.UpdateProfileContainer {
     max-width: 800px;
     margin: 20px auto;
-    padding: 20px;
-}
-
-/* Notifications Section */
-.Notifications {
-    margin-bottom: 20px;
-}
-
-/* Ongoing Elections Styles */
-.OngoingElections {
-    margin-top: 20px;
-}
-
-/* Elections Container */
-.elections-container {
-    display: grid; /* Grid layout for cards */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 20px; /* Space between cards */
-}
-
-/* Election Card Styles */
-.election-card {
-    background-color: #1e1e1e; /* Dark background for cards */
+    background-color: #1e1e1e; /* Dark background for profile */
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Dark shadow */
-    transition: transform 0.3s; /* Smooth hover effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
 }
 
-.election-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+/* Form Styles */
+.UpdateProfileForm {
+    display: flex;
+    flex-direction: column; /* Column layout for form elements */
 }
 
-.election-card h3 {
-    margin-top: 0;
-    color: #bb86fc; /* Purple heading */
-}
-
-.election-card p {
-    color: #e0e0e0; /* Light text color for descriptions */
-}
-
-/* Vote Link Styles */
-.vote-link {
-    display: inline-block; /* Block for spacing */
-    margin-top: 10px; /* Space above link */
-    color: #ffffff; /* White text */
-    background-color: #bb86fc; /* Purple background */
+.UpdateProfileForm input[type="text"],
+.UpdateProfileForm input[type="email"],
+.UpdateProfileForm input[type="number"],
+.UpdateProfileForm input[type="date"],
+.UpdateProfileForm textarea,
+.UpdateProfileForm input[type="file"] {
+    background-color: #2c2c2c; /* Dark background for inputs */
+    border: 1px solid #424242; /* Border color */
+    color: #e0e0e0; /* Light text color */
     padding: 10px;
     border-radius: 4px; /* Rounded corners */
-    text-decoration: none; /* Remove underline */
+    margin-bottom: 15px; /* Space between inputs */
 }
 
-.vote-link:hover {
+.UpdateProfileForm input[type="submit"] {
+    background-color: #bb86fc; /* Purple background for submit button */
+    color: #ffffff; /* White text */
+    border: none; /* Remove border */
+    padding: 10px;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.UpdateProfileForm input[type="submit"]:hover {
     background-color: #9c64d8; /* Darker purple on hover */
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .UserDashboardNav {
+    .UpdateProfileNav {
         flex-direction: column; /* Stack items on smaller screens */
         align-items: flex-start; /* Align to the left */
     }
-
-    .UserDashboardNavContainer {
+    
+    .UpdateProfileNavContainer {
         margin-top: 10px; /* Space between title and links */
         width: 100%; /* Full width for links */
     }
 
-    .UserDashboardNavContainer a {
+    .UpdateProfileNavContainer a {
         margin-left: 0; /* Remove left margin */
         width: 100%; /* Links take full width */
         text-align: center; /* Center align text */
     }
-}
-.update-profile-link {
-    color: #9c64d8;
-    text-decoration: underline;
-    margin-left: 5px; /* Add space between the text and the link */
 }

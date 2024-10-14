@@ -1,98 +1,102 @@
-*{
+/* viewelection.css */
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
 }
-.ViewElectionNav{
-    height: 70px;
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    padding-left: 10px;
+
+/* Navigation Styles */
+.ViewElectionNav {
+    background-color: #1e1e1e; /* Slightly lighter dark for the nav */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between title and links */
+    align-items: center; /* Center vertically */
 }
-.ViewElectionNav h1{
-    color: white;
+
+.ViewElectionNav h1 {
+    margin: 0;
+    font-size: 24px;
 }
-.ViewElectionNavContainer{
-    width: 80%;
-    height: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    flex-direction: row;
-    padding-right: 10px;
+
+/* Navigation Links Container */
+.ViewElectionNavContainer {
+    display: flex; /* Flexbox for horizontal layout */
 }
-.ViewElectionNavContainer a{
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-    font-size: 22px;
+
+/* Individual Link Styles */
+.ViewElectionNavContainer a {
+    color: #bb86fc; /* Purple link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Spacing around links */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    margin-left: 10px; /* Space between links */
+    font-weight: 500; /* Medium weight for better visibility */
 }
-.ViewElectionNavContainer a:hover{
-    text-decoration: underline;
+
+/* Hover and Active Link Styles */
+.ViewElectionNavContainer a:hover,
+.ViewElectionNavContainer a:active {
+    background-color: rgba(187, 134, 252, 0.2); /* Light purple background on hover */
+    color: #ffffff; /* White text on hover */
 }
-.ViewElectionBodyContainer{
-    background-image: url(../images/web_background.jpg);
-    background-size: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    /* justify-content: center; */
-    color: white;
+
+/* Body Container Styles */
+.ViewElectionBodyContainer {
+    max-width: 1100px;
+    margin: 20px auto; /* Center the container */
+    background-color: #1e1e1e; /* Dark background for the body container */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
 }
-.ViewElectionBodyContainer h1{
-    font-size: 45px;
-    text-decoration: underline;
+
+.ViewElectionBodyContainer h1 {
+    margin-top: 0;
+    color: #ffffff; /* White heading */
 }
-th{
-    width: 50px;
-    height: 35px;
-    color: white;
-    font-size: large;
+
+/* Table Styles */
+table {
+    width: 100%; /* Use full width of the container */
+    border-collapse: collapse; /* Remove space between cells */
 }
-td{
-    width: 50px;
-    height: 35px;
-    color: rgb(226, 226, 226);
-    text-align: center;
+
+th, td {
+    padding: 12px; /* Spacing inside cells */
+    text-align: left;
 }
-table{
-    width: 60%;
-    height: auto;
-    margin-top: 30px;
-    background-color: black;
-    border-color: white;
-    border-collapse: collapse;
+
+th {
+    background-color: #bb86fc; /* Purple background for table headers */
+    color: #ffffff; /* White text for headers */
 }
-td button{
-    width: 100%;
-    height: 35px;
-    background-color: black;
-    color: white;
-    text-align: center;
+
+tr:nth-child(even) {
+    background-color: #2e2e2e; /* Slightly lighter background for even rows */
 }
-td button:hover{
-    color: black;
-    background-color: white;
+
+tr:hover {
+    background-color: #424242; /* Darker background on row hover */
 }
-.NavHomeImage{
-    width: 20px;
-    height: 20px;
-    margin-bottom: -1px;
-    margin-right: 3px;
+
+/* Button Styles */
+button {
+    background-color: #bb86fc; /* Purple button color */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
 }
-.NavAddElecImage{
-    width: 25px;
-    height: 25px;
-    margin-bottom: -3px;
-    margin-right: 3px;
-}
-.NavViewCanImage{
-    width: 23px;
-    height: 23px;
-    margin-bottom: -4px;
-    margin-right: 3px;
+
+button:hover {
+    background-color: #9b59b6; /* Darker purple on hover */
 }

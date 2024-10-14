@@ -66,12 +66,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change Password</title>
-    <link rel="stylesheet" href="../css/change_password.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="../css/change_password.css">
 </head>
 <body>
 
     <nav class="ChangePasswordNav">
         <h1>Change Password</h1>
+        <button onclick="window.location.href='<?php echo $user_code == 0 ? 'candidate_dashboard.php' : 'user_dashboard.php'; ?>'">Back to Dashboard</button>
     </nav>
 
     <div class="ChangePasswordContainer">
@@ -87,12 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <input type="submit" value="Change Password">
         </form>
-        <?php if ($user_code == 0): ?>
-            <button onclick="window.location.href='candidate_dashboard.php'">Back to Dashboard</button>
-        <?php else: ?>
-            <button onclick="window.location.href='user_dashboard.php'">Back to Dashboard</button>
-        <?php endif; ?>
-        
     </div>
 
 </body>

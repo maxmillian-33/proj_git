@@ -4,7 +4,7 @@
     /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
 }
 .RegisterContainer{
-    background-image: url(../images/web_background.jpg);
+    background-image: url(../images/background2.webp);
     background-size: 100%;
     height: 100vh;
     display: flex;
@@ -23,12 +23,12 @@
     align-items: center;
     border-radius: 12px;
     outline-style: solid;
-    outline-color: white;
+    outline-color: black;
     box-shadow: 0 4px 16px black;
 }
 .RegisterInput{
     /* background-color: white; */
-    color: white;
+    color: black;
     width: 80%;
     height: 35px;
     margin-top: 15px;
