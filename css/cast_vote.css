@@ -1,0 +1,96 @@
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Navigation Styles */
+.VoteNav {
+    background-color: #1e1e1e; /* Slightly lighter dark for the nav */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+.VoteNav h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.VoteNavContainer {
+    margin-top: 10px;
+}
+
+.VoteNavContainer a {
+    color: #bb86fc; /* Purple link color */
+    text-decoration: none;
+    padding: 10px;
+    transition: border 0.3s;
+}
+
+/* Container Styles */
+.candidates-container {
+    max-width: 800px; /* Set a max width for the candidate container */
+    margin: 20px auto; /* Center the container */
+    padding: 20px; /* Padding for the container */
+    background-color: #1e1e1e; /* Dark background for candidates container */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Dark shadow */
+}
+
+/* Candidate Card Styles */
+.candidate-card {
+    background-color: #2a2a2a; /* Card background */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space between cards */
+    padding: 15px; /* Padding inside cards */
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between image and button */
+}
+
+.candidate-photo {
+    max-width: 100px; /* Set a max width for candidate images */
+    border-radius: 5px; /* Rounded corners for images */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.candidate-card h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 20px; /* Font size for candidate names */
+}
+
+/* Vote Button Styles */
+.vote-button {
+    background-color: #bb86fc; /* Purple background */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding around the button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.vote-button:hover {
+    background-color: #9b59b6; /* Slightly darker purple on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .candidates-container {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+    
+    .candidate-card {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align to the left */
+    }
+    
+    .candidate-photo {
+        margin-bottom: 10px; /* Space below image */
+    }
+}

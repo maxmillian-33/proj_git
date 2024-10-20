@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <nav class="ChangePasswordNav">
         <h1>Change Password</h1>
-        <button onclick="window.location.href='<?php echo $user_code == 0 ? 'candidate_dashboard.php' : 'user_dashboard.php'; ?>'">Back to Dashboard</button>
+        <a href="<?php echo $user_code == 0 ? 'candidate_dashboard.php' : 'user_profile.php'; ?>">Back to Profile</a>
     </nav>
 
     <div class="ChangePasswordContainer">

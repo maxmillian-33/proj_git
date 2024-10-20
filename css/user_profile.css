@@ -27,16 +27,16 @@ body {
 }
 
 .UserProfileNavContainer a {
-    color: #bb86fc; /* Purple link color */
+    color: #bb86fc;
     text-decoration: none;
     padding: 10px;
-    border: 1px solid transparent;
+    /* border: 1px solid transparent; */
     transition: border 0.3s;
 }
-
+/* 
 .UserProfileNavContainer a:hover {
-    border: 1px solid #bb86fc; /* Purple border on hover */
-}
+    border: 1px solid #bb86fc;
+} */
 
 /* Profile Container Styles */
 .UserProfileContainer {
