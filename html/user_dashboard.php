@@ -79,6 +79,7 @@ if (!empty($upcoming_elections)) {
     <nav class="UserDashboardNav">
         <h1 class="UserDashboardHeading">Welcome, <?php echo htmlspecialchars($user['name']); ?></h1>
         <div class="UserDashboardNavContainer">
+            <a href="view_results.php">View Results</a>
             <a href="user_profile.php">View Profile</a>
             <a href="logout.php">Logout</a>
         </div>
