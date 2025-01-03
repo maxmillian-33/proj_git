@@ -1,10 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "online_election_system");
-if (!$conn) {
-    echo "Database not connected";
-    exit();
-}
+require_once 'dbcon.php';
 
 // Check if the user is logged in
 if (!isset($_SESSION['email'])) {

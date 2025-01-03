@@ -1,10 +1,7 @@
 <?php
 session_start(); // Start the session
 
-$conn = mysqli_connect("localhost", "root", "", "online_election_system");
-if (!$conn) {
-    echo "Database not connected";
-}
+require_once 'dbcon.php';
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -53,13 +50,13 @@ if (isset($_POST['login'])) {
     <title>Login</title>
     <link rel="stylesheet" href="../css/login.css">
 </head>
-<body>
+<body class="dark33">
     <nav class="LoginNav">
         <h1 class="LoginNavHeading">Login</h1>
         <div class="LoginNavContainer">
-            <a href="home.php"><img class="NavHomeImage" src="../images/home.png" alt="">Home</a>
-            <a href="login.php"> <img class="NavLoginImage" src="../images/login.png" alt="">Login</a>
-            <a href="register.php"><img class="NavRegisterImage" src="../images/register.png" alt="">Register</a>
+            <a href="home.php">Home</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
         </div>
     </nav>
     <div class="LoginContainer">

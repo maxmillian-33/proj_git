@@ -1,10 +1,6 @@
 <?php
 // Connect to the database
-$conn = mysqli_connect("localhost", "root", "", "online_election_system");
-if (!$conn) {
-    echo "Database not connected";
-    exit();
-}
+require_once 'dbcon.php';
 
 // Fetch the election ID from the URL
 $election_id = isset($_GET['election_id']) ? intval($_GET['election_id']) : 0;

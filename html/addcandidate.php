@@ -28,10 +28,7 @@
 </html>
 
 <?php
-$conn = mysqli_connect("localhost", "root", "", "online_election_system");
-if (!$conn) {
-    echo "Database not connected";
-}
+require_once 'dbcon.php';
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];

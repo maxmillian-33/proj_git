@@ -4,11 +4,7 @@ session_start();
 $user_id = $_POST['user_id']; // Usually, user_id should come from session
 
 // Database connection
-$conn = mysqli_connect("localhost", "root", "", "online_election_system");
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+require_once 'dbcon.php';
 
 // Get POST data from form
 $current_password = $_POST['current_password'];

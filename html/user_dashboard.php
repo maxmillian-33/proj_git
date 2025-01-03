@@ -11,11 +11,7 @@ if (!isset($_SESSION['email']) || $_SESSION['user_code'] != 1) {
 $email = $_SESSION['email'];
 
 // Connect to the database
-$conn = mysqli_connect("localhost", "root", "", "online_election_system");
-if (!$conn) {
-    echo "Database not connected";
-    exit();
-}
+require_once 'dbcon.php';
 
 // Retrieve user details
 $sql = "SELECT * FROM `users` WHERE `email` = '$email'";
@@ -132,7 +128,7 @@ if (!empty($upcoming_elections)) {
                             <h3><?php echo htmlspecialchars($election['title']); ?></h3>
                             <p><?php echo htmlspecialchars($election['description']); ?></p>
                             <p><strong>Start Date:</strong> <?php echo htmlspecialchars($election['start_date']); ?> at <?php echo htmlspecialchars($election['start_time']); ?></p>
-                            <p><strong>End Date:</strong> <?php echo htmlspecialchars($election['result_date']); ?> at <?php echo htmlspecialchars($election['end_time']); ?></p>
+                            <p><strong>Result Date:</strong> <?php echo htmlspecialchars($election['result_date']); ?> at <?php echo htmlspecialchars($election['result_time']); ?></p>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>

@@ -11,11 +11,7 @@ if (!isset($_SESSION['email']) || $_SESSION['user_code'] != 0) {
 $email = $_SESSION['email'];
 
 // Connect to the database
-$conn = mysqli_connect("localhost", "root", "", "online_election_system");
-if (!$conn) {
-    echo "Database not connected";
-    exit();
-}
+require_once 'dbcon.php';
 
 // Retrieve candidate details
 $sql = "SELECT * FROM `candidates` WHERE `email` = '$email'";
