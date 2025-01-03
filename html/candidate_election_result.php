@@ -63,7 +63,7 @@ $winner_photo = mysqli_fetch_assoc($winner_photo_result);
     <nav>
         <h1>Election Results</h1>
         <div class="ResultsNavContainer">
-            <a href="view_results.php">Back to Results</a>
+            <a href="candidate_view_results.php">Back to Results</a>
         </div>
     </nav>
 

@@ -1,134 +1,159 @@
-*{
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
 }
-.AddCandidateContainer{
-    background-image: url(../images/background2.webp);
-    background-size: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-.AddCandidateForm{
-    /* background-color: rgb(3, 52, 110); */
-    backdrop-filter: blur(5px);
-    width: 350px;
-    height: 425px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 12px;
-    outline-style: solid;
-    outline-color: white;
-}
-.AddCandidateInput{
-    /* background-color: white; */
-    width: 80%;
-    height: 35px;
-    margin-top: 15px;
-    /* border-radius: 6px; */
-    border: none;
-    outline: none;
-    color: white;
-    background: transparent;
-    border-bottom: 2px solid black;
-}
-.AddCandidateSubmit{
-    background-color: rgb(16, 16, 16);
-    color: white;
-    width: 40%;
-    height: 30px;
-    margin-top: 15px;
-    border-radius: 6px;
-    border: none;
-    outline: none;
-}
-.AddCandidateHeading{
-    color: rgb(0, 0, 0);;
-    font-weight: bolder;
-    margin-bottom: 5px;
-    font-size: 40px;
-}
-.AddCandidateNav{
-    height: 70px;
-    background-color: black;
+
+/* Navigation Bar */
+.AddCandidateNav {
+    background-color: #1e1e1e; /* Darker gray background */
+    color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
-    padding-left: 10px;
+    padding: 15px 30px; /* Adds spacing */
+    border-bottom: 2px solid #bb86fc;
 }
-.AddCandidateNav h1{
-    color: white;
+
+.AddCandidateNavHeading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #bb86fc; /* Purple accent color */
+    margin: 0;
 }
-.AddCandidateNavContainer{
-    width: 70%;
-    height: 100%;
+
+.AddCandidateNavContainer {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
-    flex-direction: row;
-    padding-right: 10px;
 }
-.AddCandidateNavContainer a{
-    color: white;
-    margin-left: 15px;
+
+.AddCandidateNavContainer a {
+    color: #bb86fc; /* Purple for links */
     text-decoration: none;
-    font-size: 22px;
-}
-.AddCandidateNavContainer a:hover{
-    text-decoration: underline;
-}
-th{
-    width: 50px;
-    height: 30px;
-    color: white;
-    font-size: large;
-}
-td{
-    width: 50px;
-    height: 30px;
-    color: rgb(226, 226, 226);
-    text-align: center;
-}
-table{
-    width: 60%;
-    height: auto;
-    margin-top: 30px;
-    background-color: black;
-    border-color: white;
-    border-collapse: collapse;
-}
-.AddCan{
-    background-image: url(../images/background2.webp);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 100vh;
+    margin-left: 20px;
     display: flex;
     align-items: center;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.AddCandidateNavContainer a:hover {
+    color: #ffffff;
+}
+
+.AddCandidateNavContainer img {
+    height: 18px; /* Icon size */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Add Candidate Container */
+.AddCandidateContainer {
+    max-width: 400px;
+    margin: 40px auto; /* Centers the form */
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark container background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow */
+}
+
+.AddCandidateForm {
+    display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    color: white;
 }
-.NavHomeImage{
-    width: 20px;
-    height: 20px;
-    margin-bottom: -3px;
-    margin-right: 3px;
+
+.AddCandidateHeading {
+    font-size: 28px;
+    text-align: center;
+    color: #bb86fc; /* Purple heading */
+    margin-bottom: 20px;
 }
-.NavAddCanImage{
-    width: 23px;
-    height: 23px;
-    margin-bottom: -4px;
-    margin-right: 3px;
+
+/* Input Fields */
+.AddCandidateInput {
+    background-color: #2c2c2c; /* Slightly lighter dark */
+    color: #e0e0e0; /* Light text */
+    border: 1px solid #444; /* Subtle border */
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
 }
-.NavViewCanImage{
-    width: 23px;
-    height: 23px;
-    margin-bottom: -4px;
-    margin-right: 3px;
+
+.AddCandidateInput:focus {
+    outline: none;
+    border-color: #bb86fc; /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(187, 134, 252, 0.5); /* Subtle glow */
+}
+
+/* Submit Button */
+.AddCandidateSubmit {
+    background-color: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text on button */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.AddCandidateSubmit:hover {
+    background-color: #9c64d8; /* Darker purple on hover */
+    color: #ffffff; /* Light text */
+}
+
+/* Custom File Input Label */
+.CustomFileInput {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #bb86fc; /* Purple button */
+    color: #121212; /* Dark text */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 10px;
+}
+
+.CustomFileInput:hover {
+    background-color: #9c64d8; /* Darker purple on hover */
+    color: #ffffff; /* White text */
+}
+
+/* Optional: Add a margin between input fields */
+.AddCandidateForm input[type="text"],
+.AddCandidateForm input[type="email"],
+.AddCandidateForm input[type="number"],
+.AddCandidateForm input[type="password"] {
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .AddCandidateNav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .AddCandidateNavContainer {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .AddCandidateNavContainer a {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .AddCandidateContainer {
+        margin: 20px auto;
+        padding: 15px;
+    }
 }

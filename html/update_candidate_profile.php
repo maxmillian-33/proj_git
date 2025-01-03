@@ -7,72 +7,62 @@ if (!isset($_SESSION['email']) || $_SESSION['user_code'] != 0) {
     exit();
 }
 
-// Retrieve user information from the session
-$email = $_SESSION['email'];
-
 // Connect to the database
 require_once 'dbcon.php';
 
-// Retrieve candidate details
+// Retrieve user information from the session
+$email = $_SESSION['email'];
+
+// Retrieve user details
 $sql = "SELECT * FROM `candidates` WHERE `email` = '$email'";
 $result = mysqli_query($conn, $sql);
-$candidate = mysqli_fetch_assoc($result);
+$user = mysqli_fetch_assoc($result);
 
-if (!$candidate) {
-    echo "<script>alert('Candidate details not found!')</script>";
-    exit();
-}
-
-// Handle form submission for updating profile
+// Update profile logic
 if (isset($_POST['update'])) {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
-    $image = $_FILES['image'];
+    $address = $_POST['address'];
+    $dob = $_POST['dob'];
+    $age = $_POST['age'];
+    $aadhar_number = $_POST['aadhar_number'];
 
-    // Handle file upload
-    if ($image['error'] == 0) {
-        $targetDir = "../uploads/";
-        $targetFile = $targetDir . basename($image["name"]);
-        move_uploaded_file($image["tmp_name"], $targetFile);
-        $imageName = basename($image["name"]);
-    } else {
-        $imageName = $candidate['image']; // keep the old image if no new image is uploaded
-    }
+    // Handle profile picture upload
+    if ($_FILES['image']['name']) {
+        $target_dir = "../uploads/";
+        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
 
-    // Update candidate details in the database
-    $sql = "UPDATE `candidates` SET `name` = '$name', `phone` = '$phone', `image` = '$imageName' WHERE `email` = '$email'";
-    $update = mysqli_query($conn, $sql);
-
-    if ($update) {
-        echo "<script>alert('Profile updated successfully!'); window.location.href='candidate_dashboard.php';</script>";
-    } else {
-        echo "<script>alert('Profile update failed!');</script>";
-    }
-}
-
-// Handle password change
-if (isset($_POST['change_password'])) {
-    $current_password = $_POST['current_password'];
-    $new_password = $_POST['new_password'];
-    $confirm_new_password = $_POST['confirm_new_password'];
-
-    // Verify the current password
-    if ($candidate['password'] == $current_password) {
-        if ($new_password === $confirm_new_password) {
-            // Update the password in the login table
-            $sql = "UPDATE `login` SET `password` = '$new_password' WHERE `email` = '$email'";
-            $update_password = mysqli_query($conn, $sql);
-
-            if ($update_password) {
-                echo "<script>alert('Password changed successfully!');</script>";
+        if ($check !== false) {
+            // Move the uploaded file to the uploads directory
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                $image_path = basename($_FILES["image"]["name"]);
+                // Update user details in the database
+                $update_sql = "UPDATE `candidates` SET `name` = '$name', `phone` = '$phone', `image` = '$image_path', 
+                               `address` = '$address', `dob` = '$dob', `age` = '$age', `aadhar_number` = '$aadhar_number' 
+                               WHERE `email` = '$email'";
             } else {
-                echo "<script>alert('Password change failed!');</script>";
+                echo "<script>alert('Sorry, there was an error uploading your file.')</script>";
             }
         } else {
-            echo "<script>alert('New passwords do not match!');</script>";
+            echo "<script>alert('File is not an image.')</script>";
         }
     } else {
-        echo "<script>alert('Current password is incorrect!');</script>";
+        // Update user details without changing the image
+        $update_sql = "UPDATE `candidates` SET `name` = '$name', `phone` = '$phone', 
+                       `address` = '$address', `dob` = '$dob', `age` = '$age', `aadhar_number` = '$aadhar_number' 
+                       WHERE `email` = '$email'";
+    }
+
+    // Execute the update query
+    if (mysqli_query($conn, $update_sql)) {
+        echo "<script>alert('Profile updated successfully!');</script>";
+        // Redirect to the user dashboard
+        header('Location: candidate_profile.php');
+        exit();
+    } else {
+        echo "<script>alert('Error updating profile: " . mysqli_error($conn) . "');</script>";
     }
 }
 ?>
@@ -83,34 +73,31 @@ if (isset($_POST['change_password'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Profile</title>
-    <link rel="stylesheet" href="../css/update_candidate_profile.css"> <!-- Create this CSS file for styling -->
+    <link rel="stylesheet" href="../css/update_user_profile.css">
 </head>
 <body>
 
     <nav class="UpdateProfileNav">
         <h1 class="UpdateProfileHeading">Update Your Profile</h1>
         <div class="UpdateProfileNavContainer">
-            <a href="candidate_dashboard.php">Dashboard</a>
-            <a href="login.php">Logout</a>
+            <a href="candidate_profile.php">Back to Profile</a>
+            <a href="logout.php">Logout</a>
         </div>
     </nav>
 
     <div class="UpdateProfileContainer">
         <form class="UpdateProfileForm" action="" method="post" enctype="multipart/form-data">
-            <input type="text" name="name" placeholder="Enter your name" value="<?php echo htmlspecialchars($candidate['name']); ?>" required>
-            <input type="email" name="email" placeholder="Enter your email" value="<?php echo htmlspecialchars($candidate['email']); ?>" readonly>
-            <input type="number" name="phone" placeholder="Enter your phone number" value="<?php echo htmlspecialchars($candidate['phone']); ?>" required>
-            <input type="file" name="image" placeholder="Upload profile picture">
+            <h2>Edit Your Profile</h2>
+            <input type="text" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
+            <input type="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" readonly>
+            <input type="number" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" required>
+            <textarea name="address" placeholder="Address" required><?php echo htmlspecialchars($user['address']); ?></textarea>
+            <input type="date" name="dob" placeholder="Date of Birth" value="<?php echo htmlspecialchars($user['dob']); ?>" required>
+            <input type="number" name="age" placeholder="Age" value="<?php echo htmlspecialchars($user['age']); ?>" required>
+            <input type="number" name="aadhar_number" placeholder="Aadhar Number" value="<?php echo htmlspecialchars($user['aadhar_number']); ?>" required>
+            <input type="file" name="image" accept="image/*">
             <input type="submit" value="Update Profile" name="update">
         </form>
-
-        <!-- <h2>Change Password</h2>
-        <form class="UpdatePasswordForm" action="" method="post">
-            <input type="password" name="current_password" placeholder="Current Password" required>
-            <input type="password" name="new_password" placeholder="New Password" required>
-            <input type="password" name="confirm_new_password" placeholder="Confirm New Password" required>
-            <input type="submit" value="Change Password" name="change_password">
-        </form> -->
     </div>
 
 </body>

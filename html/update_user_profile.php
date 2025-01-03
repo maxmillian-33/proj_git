@@ -59,7 +59,7 @@ if (isset($_POST['update'])) {
     if (mysqli_query($conn, $update_sql)) {
         echo "<script>alert('Profile updated successfully!');</script>";
         // Redirect to the user dashboard
-        header('Location: user_dashboard.php');
+        header('Location: user_profile.php');
         exit();
     } else {
         echo "<script>alert('Error updating profile: " . mysqli_error($conn) . "');</script>";

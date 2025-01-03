@@ -57,7 +57,7 @@ $completed_elections_result = mysqli_query($conn, $completed_elections_sql);
                         <td><?php echo htmlspecialchars($election['result_date']); ?></td>
                         <td><?php echo htmlspecialchars($election['result_time']); ?></td>
                         <td>
-                            <a href="election_result.php?election_id=<?php echo $election['election_id']; ?>" class="view-button">View Result</a>
+                            <a href="user_election_result.php?election_id=<?php echo $election['election_id']; ?>" class="view-button">View Result</a>
                         </td>
                     </tr>
                 <?php endwhile; ?>

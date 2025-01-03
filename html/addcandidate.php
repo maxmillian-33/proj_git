@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Candidate</title>
     <link rel="stylesheet" href="../css/addcandidate.css">
 </head>
@@ -7,9 +10,9 @@
     <nav class="AddCandidateNav">
         <h1 class="AddCandidateNavHeading">Add Candidate</h1>
         <div class="AddCandidateNavContainer">
-            <a href="admindashboard.php"><img class="NavHomeImage" src="../images/home.png" alt="">Home</a>
-            <a href="addcandidate.php"><img class="NavAddCanImage" src="../images/add_candidates.png" alt=""><u>Add Candidate</u></a>
-            <a href="viewcandidates.php"><img class="NavViewCanImage" src="../images/view_candidate.png" alt="">View Candidates</a>
+            <a href="admindashboard.php">Home</a>
+            <a href="addcandidate.php"><u>Add Candidate</u></a>
+            <a href="viewcandidates.php">View Candidates</a>
         </div>
     </nav>
     <div class="AddCandidateContainer">
@@ -20,7 +23,13 @@
             <input class="AddCandidateInput" type="number" name="phone" placeholder="Enter Your phone number" required>
             <input class="AddCandidateInput" type="password" name="password" placeholder="Enter your password" required>
             <input class="AddCandidateInput" type="password" name="confirm" placeholder="Confirm Password" required>
-            <input class="AddCandidateInput" type="file" name="image" accept="image/*" required>
+
+            <!-- Hidden File Input -->
+            <input id="candidate_image" class="AddCandidateInput" type="file" name="image" accept="image/*" style="display: none;" required>
+
+            <!-- Custom Label for File Input -->
+            <label for="candidate_image" class="CustomFileInput">Choose Candidate Image</label>
+
             <input class="AddCandidateSubmit" type="submit" value="Add Candidate" name="submit">
         </form>
     </div>
@@ -44,7 +53,7 @@ if (isset($_POST['submit'])) {
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    // Check if image file is a actual image or fake image
+    // Check if image file is an actual image or fake image
     $check = getimagesize($_FILES['image']['tmp_name']);
     if ($check === false) {
         echo "<script>alert('File is not an image.')</script>";
@@ -78,13 +87,13 @@ if (isset($_POST['submit'])) {
             if ($password === $confirm) {
                 $sql = "INSERT INTO `candidates`(`name`, `email`, `phone`, `password`, `image`) VALUES ('$name','$email','$phone', '$password', '$image')";
                 $data = mysqli_query($conn, $sql);
-                $sql2 = "INSERT INTO `login`(`email`, `password`,`user_code`) VALUES ('$email','$password','0')";
+                $sql2 = "INSERT INTO `login`(`email`, `password`, `user_code`) VALUES ('$email','$password','0')";
                 $data2 = mysqli_query($conn, $sql2);
                 if ($data) {
-                    echo "<script>alert('Registration Completed')</script>";
+                    echo "<script>alert('Candidate Added Successfully')</script>";
                     header('Location: addcandidate.php');
                 } else {
-                    echo "<script>alert('Registration Not Completed')</script>";
+                    echo "<script>alert('Failed to Add Candidate')</script>";
                 }
             } else {
                 echo "<script>alert('Password Does not Match')</script>";

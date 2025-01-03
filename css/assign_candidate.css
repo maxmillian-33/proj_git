@@ -2,13 +2,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212;
+    color: #e9ecef;
 }
 
 .AdminNav {
-    background-color: #007bff;
-    color: white;
+    background-color: #1e1e1e;
+    color: #bb86fc;
     padding: 15px;
     text-align: center;
     position: relative;
@@ -26,7 +26,7 @@ body {
 }
 
 .AdminNavContainer a {
-    color: white;
+    color: #e9ecef;
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -34,20 +34,20 @@ body {
 }
 
 .AdminNavContainer a:hover {
-    background-color: #0056b3;
+    background-color: #bb86fc;
 }
 
 .AdminBodyContainer {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background: white;
+    background: #121212;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #007bff;
+    color: #bb86fc;
 }
 
 form {
@@ -69,8 +69,8 @@ select {
 }
 
 input[type="submit"] {
-    background-color: #007bff;
-    color: white;
+    background-color: #bb86fc;
+    color: #1e1e1e;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -80,13 +80,13 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #9c64d8;
 }
 
 .assigned-candidates {
     margin-top: 20px;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #1e1e1e;
     border-radius: 5px;
 }
 
@@ -96,14 +96,14 @@ input[type="submit"]:hover {
 }
 
 .assigned-candidates li {
-    background-color: #e9ecef;
+    background-color: #121212;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
 }
 .remove-button {
     background-color: #ff4d4d; /* Red color for remove button */
-    color: white; /* White text color */
+    color: #bb86fc; /* #bb86fc text color */
     border: none; /* Remove default border */
     border-radius: 5px; /* Rounded corners */
     padding: 5px 10px; /* Padding around the button */
